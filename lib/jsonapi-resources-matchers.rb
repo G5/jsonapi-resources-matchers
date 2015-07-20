@@ -1,0 +1,1 @@
+require 'jsonapi/resources/matchers'
