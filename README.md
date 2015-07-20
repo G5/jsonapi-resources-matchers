@@ -1,12 +1,12 @@
 # JSONAPI::Resources::Matchers
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jsonapi/resources/matchers`. To experiment with that code, run `bin/console` for an interactive prompt.
+Spec matchers for [jsonapi-resources](https://github.com/cerebris/jsonapi-resources).
 
-TODO: Delete this and the text above, and describe your gem
+Currently, only RSpec matchers exist.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (in a `test` group):
 
 ```ruby
 gem 'jsonapi-resources-matchers'
@@ -22,7 +22,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Anything with a `type` of `resource` will have the matchers automatically included.
+
+```ruby
+class Book < ActiveResource::Base
+end
+
+class Api::V1::BookResource < JSONAPI::Resource
+  primary_key :isbn
+  attributes :title
+  has_many :readers, class_name: "Person"
+  filters :author_id
+end
+
+RSpec.describe Api::V1::BookResource, type: :resource do
+  let(:book) { Book.new }
+  subject { described_class.new(book) }
+
+  it { is_expected.to use_primary_key :isbn }
+  it { is_expected.to have_attribute :title }
+  it { is_expected.to have_many(:readers).with_class_name("Person") }
+  it { is_expected.to filter(:author_id) }
+end
+```
 
 ## Development
 
