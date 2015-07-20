@@ -28,6 +28,13 @@ describe JSONAPI::Resources::Matchers do
       it { is_expected.to have_many(:libros).with_class_name("Book") }
       it { is_expected.to_not have_many(:fans) }
     end
+
+    describe "model name" do
+      let(:book) { Book.new }
+      subject(:resource) { LibroResource.new(book) }
+      it { is_expected.to have_model_name("Book") }
+      it { is_expected.to_not have_model_name("Libro") }
+    end
   end
 
 end
