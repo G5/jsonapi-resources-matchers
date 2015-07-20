@@ -6,8 +6,8 @@ require 'jsonapi/resources/matchers/version'
 Gem::Specification.new do |spec|
   spec.name          = "jsonapi-resources-matchers"
   spec.version       = Jsonapi::Resources::Matchers::VERSION
-  spec.authors       = ["Ramon Tayag"]
-  spec.email         = ["ramon.tayag@gmail.com"]
+  spec.authors       = ["G5", "Ramon Tayag"]
+  spec.email         = ["lateam@getg5.com","ramon.tayag@gmail.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
