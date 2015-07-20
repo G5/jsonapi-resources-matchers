@@ -14,6 +14,12 @@ describe JSONAPI::Resources::Matchers do
       it { is_expected.to_not have_attribute(:created_at) }
     end
 
+    describe "filters" do
+      let(:author) { Author.new }
+      subject(:resource) { AuthorResource.new(author) }
+      it { is_expected.to filter(:name) }
+      it { is_expected.to_not filter(:created_at) }
+    end
   end
 
 end
