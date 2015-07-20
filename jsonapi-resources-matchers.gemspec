@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["G5", "Ramon Tayag"]
   spec.email         = ["lateam@getg5.com","ramon.tayag@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Spec matchers for jsonapi-resources}
+  spec.description   = %q{Spec matchers for jsonapi-resources}
   spec.homepage      = "git@github.com:G5/jsonapi-resources-matchers.git"
   spec.license       = "MIT"
 
