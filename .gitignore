@@ -8,4 +8,4 @@
 /spec/reports/
 /tmp/
 
-/spec/dummy/db/*
+/spec/dummy/db/*.sqlite3
