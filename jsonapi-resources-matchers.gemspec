@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Spec matchers for jsonapi-resources}
   spec.description   = %q{Spec matchers for jsonapi-resources}
-  spec.homepage      = "git@github.com:G5/jsonapi-resources-matchers.git"
+  spec.homepage      = "https://github.com/G5/jsonapi-resources-matchers"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
