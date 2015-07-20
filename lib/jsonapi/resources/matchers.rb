@@ -1,6 +1,6 @@
 require "jsonapi/resources/matchers/version"
 
-module Jsonapi
+module JSONAPI
   module Resources
     module Matchers
       # Your code goes here...

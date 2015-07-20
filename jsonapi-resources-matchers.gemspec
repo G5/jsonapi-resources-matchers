@@ -5,7 +5,7 @@ require 'jsonapi/resources/matchers/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "jsonapi-resources-matchers"
-  spec.version       = Jsonapi::Resources::Matchers::VERSION
+  spec.version       = JSONAPI::Resources::Matchers::VERSION
   spec.authors       = ["G5", "Ramon Tayag"]
   spec.email         = ["lateam@getg5.com","ramon.tayag@gmail.com"]
 
