@@ -1,5 +1,6 @@
 class AuthorResource < JSONAPI::Resource
 
+  primary_key :name
   attribute :name
   filters :name
 

@@ -35,6 +35,13 @@ describe JSONAPI::Resources::Matchers do
       it { is_expected.to have_model_name("Book") }
       it { is_expected.to_not have_model_name("Libro") }
     end
+
+    describe "primary key" do
+      let(:author) { Author.new }
+      subject(:resource) { AuthorResource.new(author) }
+      it { is_expected.to have_primary_key(:name) }
+      it { is_expected.to_not have_primary_key(:id) }
+    end
   end
 
 end
