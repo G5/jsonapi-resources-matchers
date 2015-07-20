@@ -1,6 +1,7 @@
 require "jsonapi/resources/matchers/version"
 require "jsonapi/resources/matchers/have_attribute"
 require "jsonapi/resources/matchers/filter"
+require "jsonapi/resources/matchers/have_many"
 
 module JSONAPI
   module Resources
@@ -12,6 +13,10 @@ module JSONAPI
 
       def filter(name)
         Filter.new(name)
+      end
+
+      def have_many(name)
+        HaveMany.new(name)
       end
 
     end
