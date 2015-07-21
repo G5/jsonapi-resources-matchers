@@ -1,4 +1,4 @@
-# TBA
+# v0.2.0
 
 - Add `have_one` matcher
 
