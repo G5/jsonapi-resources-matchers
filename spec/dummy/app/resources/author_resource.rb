@@ -5,6 +5,6 @@ class AuthorResource < JSONAPI::Resource
   filters :name
 
   has_many :books
-  has_many :libros, class_name: "Book"
+  has_many :libros, class_name: "Book", relation_name: :books
 
 end

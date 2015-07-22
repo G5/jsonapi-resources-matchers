@@ -24,6 +24,23 @@ RSpec.describe JSONAPI::Resources::Matchers::HaveMany do
         is_expected.to eq "expected `AuthorResource` to have many `friends` with class name `Author`"
       end
     end
+
+    context "with a relation name" do
+      it "generates the right failure message" do
+        matcher.with_relation_name(:people)
+        is_expected.to eq "expected `AuthorResource` to have many `friends` with relation name `people`"
+      end
+
+      it "checks that the relation name matches" do
+        matcher = described_class.new(:libros)
+
+        matcher.with_relation_name(:bookers)
+        expect(matcher.matches?(resource)).to be false
+
+        matcher.with_relation_name(:books)
+        expect(matcher.matches?(resource)).to be true
+      end
+    end
   end
 
 end

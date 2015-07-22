@@ -26,6 +26,7 @@ describe JSONAPI::Resources::Matchers do
       subject(:resource) { AuthorResource.new(author) }
       it { is_expected.to have_many(:books) }
       it { is_expected.to have_many(:libros).with_class_name("Book") }
+      it { is_expected.to have_many(:libros).with_relation_name(:books) }
       it { is_expected.to_not have_many(:fans) }
     end
 
