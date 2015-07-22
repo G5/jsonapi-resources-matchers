@@ -1,4 +1,4 @@
-# TBA
+# v0.3.0
 
 - Add `with_relation_name` to `have_many` matcher
 - Condense `HaveOne` and `HaveMany` into `Relationship`. No public API change.
