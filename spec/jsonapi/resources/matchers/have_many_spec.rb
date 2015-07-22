@@ -3,20 +3,36 @@ require 'spec_helper'
 RSpec.describe JSONAPI::Resources::Matchers::HaveMany do
 
   describe "#description" do
-    let(:matcher) { described_class.new(:friends) }
-    subject(:description) { matcher.description }
-    it { is_expected.to eq "have many `friends`"}
+    context "relationship type is `:have_many`" do
+      let(:matcher) { described_class.new(:have_many, :friends) }
+      subject(:description) { matcher.description }
+      it { is_expected.to eq "have many `friends`"}
+    end
+
+    context "relationship type is `:have_one`" do
+      let(:matcher) { described_class.new(:have_one, :friend) }
+      subject(:description) { matcher.description }
+      it { is_expected.to eq "have one `friend`"}
+    end
   end
 
   describe "#failure_message" do
     let(:author) { Author.new }
     let(:resource) { AuthorResource.new(author) }
-    let(:matcher) { described_class.new(:friends) }
+    let(:matcher) { described_class.new(:have_many, :friends) }
     subject(:failure_message) { matcher.failure_message }
 
     before { matcher.resource = resource }
 
-    it { is_expected.to eq "expected `AuthorResource` to have many `friends`"}
+    context "relationship type is `:have_many`" do
+      let(:matcher) { described_class.new(:have_many, :friends) }
+      it { is_expected.to eq "expected `AuthorResource` to have many `friends`"}
+    end
+
+    context "relationship type is `:have_one`" do
+      let(:matcher) { described_class.new(:have_one, :friend) }
+      it { is_expected.to eq "expected `AuthorResource` to have one `friend`"}
+    end
 
     context "with a class name" do
       before { matcher.expected_class_name = "Author" }
@@ -32,7 +48,7 @@ RSpec.describe JSONAPI::Resources::Matchers::HaveMany do
       end
 
       it "checks that the relation name matches" do
-        matcher = described_class.new(:libros)
+        matcher = described_class.new(:have_many, :libros)
 
         matcher.with_relation_name(:bookers)
         expect(matcher.matches?(resource)).to be false

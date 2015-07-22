@@ -3,14 +3,23 @@ module JSONAPI
     module Matchers
       class HaveMany
 
-        attr_accessor :name, :resource, :expected_class_name, :expected_relation_name
+        attr_accessor(:name,
+                      :relationship_type,
+                      :resource,
+                      :expected_class_name,
+                      :expected_relation_name)
 
-        def initialize(name)
+        def initialize(relationship_type, name)
+          self.relationship_type = relationship_type
           self.name = name
         end
 
         def description
-          "have many `#{name}`"
+          "#{humanized_relationship_type} `#{name}`"
+        end
+
+        def humanized_relationship_type
+          relationship_type.to_s.gsub('_',' ')
         end
 
         def matches?(resource)
@@ -42,7 +51,7 @@ module JSONAPI
 
         def failure_message
           resource_name = resource.class.name.demodulize
-          message = ["expected `#{resource_name}` to have many `#{name}`"]
+          message = ["expected `#{resource_name}` to #{humanized_relationship_type} `#{name}`"]
           if self.expected_class_name
             message << "with class name `#{self.expected_class_name}`"
           end
