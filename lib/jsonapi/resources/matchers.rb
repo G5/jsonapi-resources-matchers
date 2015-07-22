@@ -1,8 +1,7 @@
 require "jsonapi/resources/matchers/version"
 require "jsonapi/resources/matchers/have_attribute"
 require "jsonapi/resources/matchers/filter"
-require "jsonapi/resources/matchers/have_many"
-require "jsonapi/resources/matchers/have_one"
+require "jsonapi/resources/matchers/relationship"
 require "jsonapi/resources/matchers/have_model_name"
 require "jsonapi/resources/matchers/have_primary_key"
 
@@ -19,11 +18,11 @@ module JSONAPI
       end
 
       def have_many(name)
-        HaveMany.new(name)
+        Relationship.new(:have_many, name)
       end
 
       def have_one(name)
-        HaveOne.new(name)
+        Relationship.new(:have_one, name)
       end
 
       def have_model_name(name)

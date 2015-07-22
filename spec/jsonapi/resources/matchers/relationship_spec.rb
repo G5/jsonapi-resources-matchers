@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe JSONAPI::Resources::Matchers::HaveMany do
+RSpec.describe JSONAPI::Resources::Matchers::Relationship do
 
   describe "#description" do
     context "relationship type is `:have_many`" do

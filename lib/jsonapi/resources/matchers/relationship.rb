@@ -1,7 +1,7 @@
 module JSONAPI
   module Resources
     module Matchers
-      class HaveMany
+      class Relationship
 
         attr_accessor(:name,
                       :relationship_type,
