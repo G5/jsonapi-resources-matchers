@@ -48,9 +48,8 @@ end
 
 ## Development
 
-In `spec/dummy`, run:
-
-- `bundle exec rake db:migrate`
+- in `spec/dummy`, run: `bundle exec rake db:migrate`
+- in project dir, run tests: `rspec spec`
 
 ## Contributing
 
