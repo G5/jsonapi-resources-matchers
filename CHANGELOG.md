@@ -1,3 +1,7 @@
+# Unreleased
+## Changed
+- Update jsonapi-resources dependency to `>= 0.6.0`
+
 # v0.3.0
 
 - Add `with_relation_name` to `have_many` matcher

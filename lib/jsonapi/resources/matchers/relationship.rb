@@ -71,7 +71,7 @@ module JSONAPI
         def matches_relation_name?
           return true if self.expected_relation_name.nil?
           association = resource.class._relationships[name]
-          actual_relation_name = association.relation_name
+          actual_relation_name = association.relation_name({})
           self.expected_relation_name == actual_relation_name
         end
 

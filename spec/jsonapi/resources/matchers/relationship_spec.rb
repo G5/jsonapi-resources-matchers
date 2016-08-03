@@ -18,7 +18,7 @@ RSpec.describe JSONAPI::Resources::Matchers::Relationship do
 
   describe "#failure_message" do
     let(:author) { Author.new }
-    let(:resource) { AuthorResource.new(author) }
+    let(:resource) { AuthorResource.new(author, {}) }
     let(:matcher) { described_class.new(:have_many, :friends) }
     subject(:failure_message) { matcher.failure_message }
 
