@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Update jsonapi-resources dependency to `>= 0.6.0`
 
+### Fixed
+- Use the key formatter JSONAPI resources is set to use https://github.com/G5/jsonapi-resources-matchers/pull/3
+
 ## [0.3.0]
 ### Added
 - Add `with_relation_name` to `have_many` matcher
