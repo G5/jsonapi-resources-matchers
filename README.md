@@ -37,9 +37,9 @@ end
 
 RSpec.describe Api::V1::BookResource, type: :resource do
   let(:book) { Book.new }
-  subject { described_class.new(book) }
+  subject { described_class.new(book, {}) }
 
-  it { is_expected.to use_primary_key :isbn }
+  it { is_expected.to have_primary_key :isbn }
   it { is_expected.to have_attribute :title }
   it { is_expected.to have_many(:readers).with_class_name("Person") }
   it { is_expected.to filter(:author_id) }
