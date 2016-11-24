@@ -19,6 +19,11 @@ module JSONAPI
           %Q(expected #{resource_name} to have updatable field `#{name}`)
         end
 
+        def failure_message_when_negated
+          resource_name = resource.class.name.demodulize
+          %Q(expected #{resource_name} not to have updatable field `#{name}`)
+        end
+
         def description
           "have updatable field `#{name}`"
         end
