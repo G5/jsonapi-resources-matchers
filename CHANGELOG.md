@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Added
+- support for `have_creatable_field` and `have_updatable_field`
+
 ## [0.4.0]
 ### Changed
 - Update jsonapi-resources dependency to `>= 0.6.0`
