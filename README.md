@@ -9,7 +9,7 @@ Currently, only RSpec matchers exist.
 Add this line to your application's Gemfile (in a `test` group):
 
 ```ruby
-gem 'jsonapi-resources-matchers'
+gem 'jsonapi-resources-matchers', require: false
 ```
 
 And then execute:
@@ -19,6 +19,12 @@ And then execute:
 Or install it yourself as:
 
     $ gem install jsonapi-resources-matchers
+
+Require the gem in your `spec/spec_helper`:
+
+```ruby
+require 'jsonapi-resources-matchers'
+```
 
 ## Usage
 
