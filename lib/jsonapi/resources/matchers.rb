@@ -2,6 +2,7 @@ require "jsonapi/resources/matchers/version"
 require "jsonapi/resources/matchers/have_attribute"
 require "jsonapi/resources/matchers/have_creatable_field"
 require "jsonapi/resources/matchers/have_updatable_field"
+require "jsonapi/resources/matchers/have_sortable_field"
 require "jsonapi/resources/matchers/filter"
 require "jsonapi/resources/matchers/relationship"
 require "jsonapi/resources/matchers/have_model_name"
@@ -17,6 +18,10 @@ module JSONAPI
 
       def have_updatable_field(name)
         HaveUpdatableField.new(name)
+      end
+
+      def have_sortable_field(name)
+        HaveSortableField.new(name)
       end
 
       def have_attribute(name)
