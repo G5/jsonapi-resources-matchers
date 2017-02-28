@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Require jsonapi-resources 0.9.0 and above
 
 ### Fixed
-- Give instructions to the developer when the primary key is not set
+- `have_attribute` and `have_one`, `have_many` matchers: give instructions to the developer when the primary key is not set
 
 ## [0.6.0] - 2016-12-22
 ### Added

@@ -25,9 +25,14 @@ module JSONAPI
         def matches?(resource)
           self.resource = resource
 
+          is_serializable? &&
           has_key_in_relationships? &&
             matches_class_name? &&
             matches_relation_name?
+        end
+
+        def is_serializable?
+          CheckSerialization.(self.resource)
         end
 
         def has_key_in_relationships?
