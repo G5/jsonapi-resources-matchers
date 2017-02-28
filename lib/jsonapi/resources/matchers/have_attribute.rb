@@ -12,6 +12,8 @@ module JSONAPI
         def matches?(resource)
           self.resource = resource
 
+          CheckSerialization.(self.resource)
+
           resource_class = resource.class
 
           serialized_hash = JSONAPI::ResourceSerializer.new(resource_class).

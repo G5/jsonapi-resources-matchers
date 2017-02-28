@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Changed
+- Require jsonapi-resources 0.9.0 and above
+
+### Fixed
+- Give instructions to the developer when the primary key is not set
+
 ## [0.6.0] - 2016-12-22
 ### Added
 - support for `have_sortable_field`

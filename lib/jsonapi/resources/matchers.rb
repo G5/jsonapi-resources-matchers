@@ -1,4 +1,5 @@
 require "jsonapi/resources/matchers/version"
+require "jsonapi/resources/matchers/services/check_serialization"
 require "jsonapi/resources/matchers/have_attribute"
 require "jsonapi/resources/matchers/have_creatable_field"
 require "jsonapi/resources/matchers/have_updatable_field"
