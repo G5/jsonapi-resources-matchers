@@ -2,4 +2,6 @@ language: ruby
 rvm:
   - 2.3.1
 cache: bundler
+before_script:
+  - cd spec/dummy && bundle exec rake db:create db:migrate db:test:prepare
 sudo: false
