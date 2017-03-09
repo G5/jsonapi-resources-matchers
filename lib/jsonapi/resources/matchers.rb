@@ -17,9 +17,10 @@ module JSONAPI
         HaveCreatableField.new(name)
       end
 
-      def have_updatable_field(name)
-        HaveUpdatableField.new(name)
+      def have_updatable_field(*names)
+        HaveUpdatableField.new(names)
       end
+      alias :have_updatable_fields :have_updatable_field
 
       def have_sortable_field(name)
         HaveSortableField.new(name)

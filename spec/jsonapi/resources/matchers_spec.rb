@@ -31,7 +31,7 @@ describe JSONAPI::Resources::Matchers do
     describe "updatable fields" do
       let(:author) { Author.new(name: "name") }
       subject(:resource) { AuthorResource.new(author, {}) }
-      it { is_expected.to have_updatable_field(:name) }
+      it { is_expected.to have_updatable_fields(:name, :address) }
       it { is_expected.to_not have_updatable_field(:created_at) }
     end
 
