@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Developer must `require "jsonapi/resources/matchers"`
 
+### Added
+- Can give list of symbols with `have_updatable_field`
+- Alias `have_updatable_field` with `have_updatable_fields`
+
 ## [1.0.0] - 2016-02-28
 ### Changed
 - Require jsonapi-resources 0.9.0 and above
