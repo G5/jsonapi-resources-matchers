@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Changed
+- Developer must `require "jsonapi/resources/matchers"`
+
 ## [1.0.0] - 2016-02-28
 ### Changed
 - Require jsonapi-resources 0.9.0 and above
