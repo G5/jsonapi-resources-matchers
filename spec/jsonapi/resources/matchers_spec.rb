@@ -24,8 +24,8 @@ describe JSONAPI::Resources::Matchers do
     describe "creatable fields" do
       let(:author) { Author.new(name: "name") }
       subject(:resource) { AuthorResource.new(author, {}) }
-      it { is_expected.to have_creatable_field(:name) }
-      it { is_expected.to_not have_creatable_field(:created_at) }
+      it { is_expected.to have_creatable_fields(:name, :birth_name) }
+      it { is_expected.to_not have_creatable_field(:created_at, :address) }
     end
 
     describe "updatable fields" do

@@ -13,9 +13,10 @@ module JSONAPI
   module Resources
     module Matchers
 
-      def have_creatable_field(name)
-        HaveCreatableField.new(name)
+      def have_creatable_field(*names)
+        HaveCreatableField.new(names)
       end
+      alias :have_creatable_fields :have_creatable_field
 
       def have_updatable_field(*names)
         HaveUpdatableField.new(names)

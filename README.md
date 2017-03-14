@@ -51,6 +51,7 @@ RSpec.describe Api::V1::BookResource, type: :resource do
   it { is_expected.to filter(:author_id) }
   it { is_expected.to have_updatable_fields(:name, :address) }
   it { is_expected.to_not have_updatable_fields(:id) }
+  it { is_expected.to have_creatable_fields(:name) }
 end
 ```
 
