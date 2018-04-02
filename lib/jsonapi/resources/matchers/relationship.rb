@@ -37,7 +37,7 @@ module JSONAPI
 
         def has_key_in_relationships?
           relationships = resource.class._relationships
-          return false if relationships.nil?
+          return false if relationships.blank?
 
           formatter = JSONAPI.configuration.key_formatter
 

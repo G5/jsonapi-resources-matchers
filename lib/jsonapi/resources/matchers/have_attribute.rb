@@ -16,7 +16,7 @@ module JSONAPI
           resource_class = resource.class
 
           attributes = resource.fetchable_fields
-          return false if attributes.nil?
+          return false if attributes.blank?
 
           formatter = JSONAPI.configuration.key_formatter
 
