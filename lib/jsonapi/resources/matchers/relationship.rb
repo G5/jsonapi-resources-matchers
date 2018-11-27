@@ -36,12 +36,17 @@ module JSONAPI
         end
 
         def has_key_in_relationships?
-          serialized_hash = JSONAPI::ResourceSerializer.new(resource.class).
-            serialize_to_hash(resource).with_indifferent_access
-          expected_key = JSONAPI.configuration.key_formatter.format(name.to_s)
-          relationships = serialized_hash["data"]["relationships"]
-          return false if relationships.nil?
-          relationships.has_key?(expected_key)
+          relationships = resource.class._relationships
+          return false if relationships.blank?
+
+          formatter = JSONAPI.configuration.key_formatter
+
+          expected_key = formatter.format(name.to_s)
+          relationship_keys = relationships.keys.map do |key|
+            formatter.format(key.to_s)
+          end
+
+          relationship_keys.include?(expected_key)
         end
 
         def with_class_name(name)

@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [TBA]
+### Added
+- Make gem Rails 5 compatible
+- Simplify relationship and attribute matchers
+
 ## [Unreleased]
 ### Changed
 - Developer must `require "jsonapi/resources/matchers"`
