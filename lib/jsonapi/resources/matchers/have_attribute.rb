@@ -11,17 +11,21 @@ module JSONAPI
 
         def matches?(resource)
           self.resource = resource
-
           CheckSerialization.(self.resource)
 
           resource_class = resource.class
 
-          serialized_hash = JSONAPI::ResourceSerializer.new(resource_class).
-            serialize_to_hash(resource).with_indifferent_access
-          expected_key = JSONAPI.configuration.key_formatter.format(name.to_s)
-          attributes = serialized_hash["data"]["attributes"]
-          return false if attributes.nil?
-          attributes.has_key?(expected_key)
+          attributes = resource.fetchable_fields
+          return false if attributes.blank?
+
+          formatter = JSONAPI.configuration.key_formatter
+
+          expected_key = formatter.format(name.to_s)
+          formatted_attributes = attributes.map do |attribute|
+            formatter.format(attribute.to_s)
+          end
+
+          formatted_attributes.include?(expected_key)
         end
 
         def failure_message
