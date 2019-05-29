@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry-byebug'
-gem 'sqlite3'
+gem "sqlite3", "~> 1.3.6"

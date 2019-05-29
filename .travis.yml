@@ -4,5 +4,5 @@ rvm:
 cache: bundler
 before_script:
   - cd spec/dummy && bundle exec rake db:create db:migrate db:test:prepare
-script: bundle exec rspec
+script: cd ../../ && bundle exec rspec
 sudo: false
