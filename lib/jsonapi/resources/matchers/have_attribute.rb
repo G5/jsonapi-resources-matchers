@@ -32,11 +32,15 @@ module JSONAPI
           resource_name = resource.class.name.demodulize
           %Q(expected #{resource_name} to have attribute #{name})
         end
+        
+        def failure_message_when_negated
+          resource_name = resource.class.name.demodulize
+          %Q(expected #{resource_name} to not have attribute #{name}, but it was present)
+        end
 
         def description
           "have attribute #{name}"
         end
-
       end
     end
   end
